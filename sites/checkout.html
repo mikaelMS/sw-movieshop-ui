@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+
+<body>
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div id="logo">
+            <i class="fa fa-film"></i>
+            <a class="navbar-brand" href="index.html">MikesMovieShop</a>
+        </div>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                    placeholder="Suche..">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-secondary btn-number">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item m-auto">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="products.html">Products</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-success btn-sm ml-3" href="cart.html">
+                    <i class="fa fa-user-circle"></i> Mein Konto
+                </a>
+            </form>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-success btn-sm ml-3" href="cart.html">
+                    <i class="fa fa-shopping-cart"></i> Einkaufswagen
+                    <span class="badge badge-light">3</span>
+                </a>
+            </form>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- START CHECKOUT FORM -->
+    <div class="container">
+        <div class="py-5 text-center">
+            <i class="fa fa-film"></i>
+            <h2>Bezahlvorgang</h2>
+            <p class="lead">Geben Sie hier Ihre Lieferadresse und Ihre Bankinformationen an um Ihre Bestellung abzuschließen</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Zu zahlende Summe</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Gesamt (EUR)</span>
+                        <strong>20€</strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Lieferadresse</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">Vorname</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Invalider Vorname.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName">Nachname</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Invalider Nachname.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" required>
+                        <div class="invalid-feedback">
+                            Bitte geben Sie Ihre Lieferadresse ein.
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="country">Land</label>
+                            <select class="custom-select d-block w-100" id="country" required>
+                                <option value="">Auswählen...</option>
+                                <option>Deutschland</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Bitte wähle ein Land aus.
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="zip">Postleitzahl</label>
+                            <input type="text" class="form-control" id="zip" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Postleitzahl wird benötigt.
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+
+                    <h4 class="mb-3">Bezahlinformationen</h4>
+
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked
+                                required>
+                            <label class="custom-control-label" for="giro">Giro Konto</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name">Name der Bank</label>
+                            <input type="text" class="form-control" id="bank-name" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Der Name der Bank wird benötigt.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">Name des Kontoinhabers</label>
+                            <input type="text" class="form-control" id="giro-owner" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Name des Kontoinhabers wird benötigt.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">IBAN</label>
+                            <input type="text" class="form-control" id="iban-number" placeholder="" required>
+                            <div class="invalid-feedback">
+                                IBAN wird benötigt.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">BIC</label>
+                            <input type="text" class="form-control" id="bic-number" placeholder="" required>
+                            <div class="invalid-feedback">
+                                BIC wird benötigt.
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Kostenpflichtig Bestellen</button>
+                </form>
+            </div>
+        </div>
+        <!-- END CHECKOUT FORM -->
+
+        <footer class="container">
+            <hr class="featurette-divider">
+            <p class="float-right"><a href="#">Zurück zum Anfang</a></p>
+            <p>&copy; 2020 MikesMovieShop &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="../js/checkout.js"></script>
+</body>
+
+</html>
